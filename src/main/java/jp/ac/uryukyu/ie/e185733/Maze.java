@@ -3,10 +3,6 @@ package jp.ac.uryukyu.ie.e185733;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Stack;
-import java.util.Random;
-        import java.util.Stack;
-        import java.util.Scanner;
-
 
 public class Maze {
     static int mazeSize = 0;
@@ -87,7 +83,7 @@ public class Maze {
                 if (i == usrRow && j == usrCol) {
                     System.out.print("**");
                 }else if (i == goalRow && j == goalCol) {
-                    System.out.print("GO");
+                    System.out.print("LO");
                 }else if (wall[i][j]) {
                     System.out.print("[]");
                 }else {
@@ -98,6 +94,7 @@ public class Maze {
 
         }
     }
+
     static void extendPath() {
         boolean extendFlag = true;
 

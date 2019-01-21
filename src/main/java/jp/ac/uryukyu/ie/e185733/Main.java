@@ -3,6 +3,10 @@ package jp.ac.uryukyu.ie.e185733;
 import java.util.Scanner;
 import java.util.Stack;
 
+/**
+ * ゲームを遊ぶためのクラス
+ * 変数はここにまとめた
+ */
 public class Main {
     static int mazeSize = 20;
     static boolean[][] wall;
@@ -33,9 +37,20 @@ public class Main {
             if(usrRow == bossRow && usrCol == bossCol){
                 Battle.Battle();
             }
-
+            if (usrRow == goalRow && usrCol == goalCol) {
+                break;
+            }
         }
     }
+
+    /**
+     * 迷路を表示するメソッド
+     * メインの方が簡単にかけたのでメインにある
+     * **:プレイヤー
+     * GO:ゴール
+     * BO:ボス
+     * []:壁
+     */
     static  void printMaze() {
         for (int i = 0; i < mazeSize; i++){
             for (int j = 0; j < mazeSize; j++){

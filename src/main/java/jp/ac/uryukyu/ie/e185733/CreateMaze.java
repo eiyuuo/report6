@@ -3,14 +3,22 @@ package jp.ac.uryukyu.ie.e185733;
 import java.util.Random;
 import java.util.Stack;
 
+/**
+ * 迷路を作るクラス
+ * 穴掘り法を使っている。
+ */
 public class CreateMaze {
     static int mazeSize = Main.mazeSize;
-    static boolean[][] wall = Main.wall ;//mazeをmainに
+    static boolean[][] wall = Main.wall ;
     static int row = Main.row;
     static int col = Main.col;
     static Stack<Integer> rowStack = new Stack<Integer>();
     static Stack<Integer> colStack = new Stack<Integer>();
 
+    /**
+     *最初に迷路を全て壁にする
+     * ランダムな場所を道にしてそこから道を伸ばしていく
+     */
     static void  createMaze() {
         for (int i = 0; i <mazeSize; i++ ) {
             for (int j = 0; j< mazeSize; j++) {
@@ -42,6 +50,9 @@ public class CreateMaze {
         }
     }
 
+    /**
+     *すいませんわかんないです
+     */
     static void extendPath() {
         boolean extendFlag = true;
 
@@ -50,6 +61,10 @@ public class CreateMaze {
         }
     }
 
+    /**
+     *上のフラグを操作する
+     * @return　道にしていいか否かをbooleanで表している
+     */
     static boolean extendPathSub() {
         Random rmd = new Random();
         int direction = rmd.nextInt(4);
@@ -64,6 +79,11 @@ public class CreateMaze {
         return false;
     }
 
+    /**
+     *おそらく道にする方向を決めるメソッド
+     * @param direction　上下左右のいづれかの方向を数字で表現している
+     * @return
+     */
     static boolean canExtendPathWithDir(int direction){
         int exRow = row, exCol = col;
 
@@ -87,6 +107,12 @@ public class CreateMaze {
         return true;
     }
 
+    /**
+     *2マス先が壁かどうかを調べるメソッド
+     * @param row　調べる地点のたて位置
+     * @param col　調べる地点のヨコ位置
+     * @return
+     */
     static int countSurroundingPath(int row,int col) {
         int num = 0;
         if (row - 1 < 0 || !wall[row - 1][col]){
@@ -105,6 +131,10 @@ public class CreateMaze {
         return num;
     }
 
+    /**
+     *
+     * @param direction
+     */
     static void movePoint(int direction) {
         switch (direction) {
             case 0:
@@ -124,6 +154,11 @@ public class CreateMaze {
         rowStack.push(row);
         colStack.push(col);
     }
+
+    /**
+     *
+     * @return
+     */
     static boolean canExtendpath(){
         return (canExtendPathWithDir(0)||canExtendPathWithDir(1)||canExtendPathWithDir(2)||canExtendPathWithDir(3));
     }

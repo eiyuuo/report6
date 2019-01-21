@@ -6,11 +6,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BattleTest {
 
-    @Test
-    void battle() {
-    }
-
+    /**
+     * bdeadがNullじゃないかの確認
+     */
     @Test
     void turnEnd() {
+        int bdamage =5;
+        int pdamage =3;
+        int bhitPint =6;
+        int phitPint =3;
+        assertNotNull(Battle.bdead);
+
     }
 }

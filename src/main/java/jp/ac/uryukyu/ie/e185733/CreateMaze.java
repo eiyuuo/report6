@@ -4,10 +4,10 @@ import java.util.Random;
 import java.util.Stack;
 
 public class CreateMaze {
-    static int mazeSize = 20;
+    static int mazeSize = Main.mazeSize;
     static boolean[][] wall ;//mazeをmainに
-    static int row;
-    static int col;
+    static int row = Main.row;
+    static int col = Main.col;
     static Stack<Integer> rowStack = new Stack<Integer>();
     static Stack<Integer> colStack = new Stack<Integer>();
 
@@ -41,7 +41,7 @@ public class CreateMaze {
             }
         }
     }
-    
+
     static void extendPath() {
         boolean extendFlag = true;
 

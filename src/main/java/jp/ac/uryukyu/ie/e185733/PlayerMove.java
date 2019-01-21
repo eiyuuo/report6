@@ -1,9 +1,9 @@
 package jp.ac.uryukyu.ie.e185733;
 
 public class PlayerMove {
-    static int mazeSize = 20;
-    static int usrRow = mazeSize - 1,usrCol = 1;
-    static boolean[][] wall = Maze.Rtwall(usrRow,usrCol);//mazeをmainに
+    static int mazeSize = Main.mazeSize;
+    static int usrRow = Main.usrRow,usrCol = Main.usrCol;
+    static boolean[][] wall = Main.wall;
 
     public static void PlayerMove(char key){
         String errMes = "You can not move there.";

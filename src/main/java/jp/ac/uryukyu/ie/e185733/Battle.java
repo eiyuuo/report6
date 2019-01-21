@@ -1,14 +1,14 @@
 package jp.ac.uryukyu.ie.e185733;
 
 public class Battle {
-    public int phitPoint;
-    public int pattack;
-    public boolean pdead;
-    public int bhitPoint;
-    public int battack;
-    public boolean bdead;
+    static int phitPoint;
+    static int pattack;
+    static boolean pdead;
+    static int bhitPoint;
+    static int battack;
+    static boolean bdead;
 
-    public  Battle(){
+    public static void Battle(){
         int bdamege,pdamege;
         if(bdead == false) {
             bdamege = (int) (Math.random() * pattack);
@@ -22,7 +22,7 @@ public class Battle {
         }
     }
 
-    public void TurnEnd(int bdamege, int pdamage){
+    static void TurnEnd(int bdamege, int pdamage){
         bhitPoint -= bdamege;
         phitPoint -= pdamage;
         if (bhitPoint < 0){

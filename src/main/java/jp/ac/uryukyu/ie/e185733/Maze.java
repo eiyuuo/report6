@@ -12,7 +12,7 @@ public class Maze {
     static int col;
     static Stack<Integer> rowStack = new Stack<Integer>();
     static Stack<Integer> colStack = new Stack<Integer>();
-    static int usrRow = mazeSize - 1,usrCol = 1, goalRow = 0, goalCol = mazeSize - 2;
+    static int usrRow = mazeSize - 1,usrCol = 1, goalRow = 0, goalCol = mazeSize - 2, bossRow = 0,bossCol = goalCol++;
 
     public static void main(String[] args) {
 
@@ -83,7 +83,9 @@ public class Maze {
                 if (i == usrRow && j == usrCol) {
                     System.out.print("**");
                 }else if (i == goalRow && j == goalCol) {
-                    System.out.print("LO");
+                    System.out.print("Go");
+                }else if (i == bossRow && j == bossCol) {
+                    System.out.print("BO");
                 }else if (wall[i][j]) {
                     System.out.print("[]");
                 }else {

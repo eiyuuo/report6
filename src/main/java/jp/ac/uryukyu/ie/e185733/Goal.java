@@ -2,8 +2,8 @@ package jp.ac.uryukyu.ie.e185733;
 
 public class Goal {
     static int mazeSize = 20;
-    static int goalRow = 0, goalCol = mazeSize - 2, bossRow = goalRow++, bossCol = goalCol;
-    static boolean[][] wall = Maze.Rtwall(goalRow, goalCol);//mazeをmainに
+    static int goalRow = Main.goalRow, goalCol = Main.goalCol, bossRow = Main.bossRow, bossCol = Main.bossCol;
+    static boolean[][] wall = Main.wall;
 
     public static void resetGoal() {
         goalRow = 0;

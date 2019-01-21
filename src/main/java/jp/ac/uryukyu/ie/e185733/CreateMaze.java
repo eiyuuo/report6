@@ -3,6 +3,7 @@ package jp.ac.uryukyu.ie.e185733;
 import java.util.Random;
 
 public class CreateMaze {
+    static int mazeSize = 20;
     public void CreateMaze(mazeSize){
         for (int i = 0; i <mazeSize; i++ ) {
             for (int j = 0; j< mazeSize; j++) {

@@ -249,8 +249,8 @@ public class Maze {
         usrCol = exUsrCol;
     }
 
-    static boolean Rtwall(int row,int col){
-        return wall[row][col];
+    static boolean[][] Rtwall(int row,int col){
+        return wall;
     }
 
 

@@ -3,9 +3,10 @@ package jp.ac.uryukyu.ie.e185733;
 public class PlayerMove {
     static int mazeSize = 20;
     static int usrRow = mazeSize - 1,usrCol = 1;
+    static boolean[][] wall = Maze.Rtwall(usrRow,usrCol);//mazeをmainに
 
     public static void PlayerMove(char key){
-        //String errMes = "You can not move there.";
+        String errMes = "You can not move there.";
         int exUsrRow = usrRow, exUsrCol = usrCol;
 
         switch (key) {
@@ -26,18 +27,18 @@ public class PlayerMove {
                 return;
             case 'N':	// 新規ゲームの開始
                 //createMaze();
-                //resetUsr();
+                resetUsr();
                 //resetGoal();
                 return;
             default:
-                System.out.println("その方向には進めません \n can not move in this direction");
+                System.out.println(errMes);
                 return;
         }
 
-        //if (exUsrRow > mazeSize - 1 || wall[exUsrRow][exUsrCol]) {
-        //    System.out.println(errMes);
-        //    return;
-        //}
+        if (exUsrRow > mazeSize - 1 || wall[exUsrRow][exUsrCol]) {
+           System.out.println(errMes);
+           return;
+        }
 
         usrRow = exUsrRow;
         usrCol = exUsrCol;
@@ -48,12 +49,12 @@ public class PlayerMove {
         usrCol = 1;
 
         while (true) {
-            if (Maze.Rtwall(usrRow,usrCol)) {
+            if (wall[usrRow-1][usrCol]) {
                 usrCol++;
             }else {
                 break;
             }
         }
-        Maze.Rtwall(usrRow,usrCol) = false;
+        wall[usrRow][usrCol] = false;
     }
 }

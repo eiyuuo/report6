@@ -24,11 +24,11 @@ public class PlayerMove {
                 break;
             case 'R':	// リスタート
                  resetUsr();
-                return;
+                return ;
             case 'N':	// 新規ゲームの開始
-                //createMaze();
+                CreateMaze.createMaze();
                 resetUsr();
-                //resetGoal();
+                Goal.resetGoal();
                 return;
             default:
                 System.out.println(errMes);

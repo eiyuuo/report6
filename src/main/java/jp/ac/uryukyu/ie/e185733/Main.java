@@ -8,7 +8,7 @@ public class Main {
     static boolean[][] wall;
     static int row;
     static int col;
-    static int usrRow = mazeSize - 1, usrCol = 1, goalRow = 0, goalCol = mazeSize - 2, bossRow = 0, bossCol = goalCol++;
+    static int usrRow = mazeSize - 1, usrCol = 1, goalRow = 0, goalCol = mazeSize - 2, bossRow = goalRow +1, bossCol = goalCol;
 
     public static void main(String[] args) {
         wall = new boolean[mazeSize][mazeSize];
@@ -28,6 +28,8 @@ public class Main {
             keys = scan.next();
             key = keys.charAt(keys.length() - 1);
             PlayerMove.PlayerMove(key);
+            usrCol = PlayerMove.usrCol;
+            usrRow = PlayerMove.usrRow;
             if(usrRow == bossRow && usrCol == bossCol){
                 Battle.Battle();
             }

@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class CreateMaze {
     static int mazeSize = Main.mazeSize;
-    static boolean[][] wall ;//mazeをmainに
+    static boolean[][] wall = Main.wall ;//mazeをmainに
     static int row = Main.row;
     static int col = Main.col;
     static Stack<Integer> rowStack = new Stack<Integer>();

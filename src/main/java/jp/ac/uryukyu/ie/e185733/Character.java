@@ -17,7 +17,7 @@ public class Character {
     public void attack (Character opponent){
         if( this.dead == false) {
             int damage = (int)(Math.random() * attack);
-            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, "BOSS", damage);
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, opponent.getName(), damage);
             opponent.wounded(damage);
         }
     }
@@ -28,5 +28,12 @@ public class Character {
             dead = true;
             System.out.printf("%sは倒れた。\n", name);
         }
+    }
+
+    public String getName(){
+        return name;
+    }
+    public void setName() {
+        this.name = name;
     }
 }

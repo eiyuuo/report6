@@ -39,12 +39,12 @@ public class Maze {
             key = keys.charAt(keys.length() - 1);
             moveUsr(key);
 
-            if (usrRow == goalRow && usrCol == goalCol) {
-                end = System.currentTimeMillis();
-                break;
+           // if (usrRow == goalRow && usrCol == goalCol) {
+             //   end = System.currentTimeMillis();
+               // break;
             }
         }
-    }
+    //}
 
     static void  createMaze() {
         for (int i = 0; i <mazeSize; i++ ) {
@@ -247,6 +247,10 @@ public class Maze {
 
         usrRow = exUsrRow;
         usrCol = exUsrCol;
+    }
+
+    static boolean Rtwall(int row,int col){
+        return wall[row][col];
     }
 
 
